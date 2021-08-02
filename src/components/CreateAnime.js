@@ -5,9 +5,11 @@ function CreateAnime({onAddClick}) {
     const [animeName, setAnimeName] = useState('')
 
     function addToDatabase() {
-        if (animeName.trim() === '')
+        const newAnimeName = animeName.trim();
+        if (newAnimeName === '')
             return;
-        onAddClick(animeName)
+        const newAnime = {name: newAnimeName}
+        onAddClick(newAnime)
         setAnimeName('')
     }
 
